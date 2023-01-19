@@ -34,97 +34,97 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $sliders = Slider::all();
-        $menus = Menu::orderBy('id', 'DESC')->limit(8)->get();
+        // $sliders = Slider::all();
+        // $menus = Menu::orderBy('id', 'DESC')->limit(8)->get();
 
-        return view('home', compact('sliders', 'menus'));
+         return view('home', );
     }
 
     public function menu()
     {
-        $starters = Menu::orderBy('price')->limit(4)->get();
-        $menus = Menu::orderBy('id', 'DESC')->get();
+        // $starters = Menu::orderBy('price')->limit(4)->get();
+        // $menus = Menu::orderBy('id', 'DESC')->get();
 
-        return view('frontend.menu', compact('menus', 'starters'));
+        // return view('frontend.menu', compact('menus', 'starters'));
     }
 
     public function reserve(Request $request)
     {
-        Reserve::create([
-            'date' => $request->date,
-            'time' => $request->time,
-            'people' => $request->people,
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'description' => $request->description,
-            'status' => 0
-        ]);
+        // Reserve::create([
+        //     'date' => $request->date,
+        //     'time' => $request->time,
+        //     'people' => $request->people,
+        //     'name' => $request->name,
+        //     'email' => $request->email,
+        //     'phone' => $request->phone,
+        //     'description' => $request->description,
+        //     'status' => 0
+        // ]);
 
-        return back()->with('toast_success', "Your application submitted!");
+        // return back()->with('toast_success', "Your application submitted!");
     }
 
     public function gallery($type)
     {
-        if ($type === 'photo') {
-            $data = Gallery::where('type', 0)->get();
-            return view('frontend.gallery.photo', compact('data'));
-        }
+        // if ($type === 'photo') {
+        //     $data = Gallery::where('type', 0)->get();
+        //     return view('frontend.gallery.photo', compact('data'));
+        // }
 
-        $data = Gallery::where('type', 1)->get();
-        return view('frontend.gallery.video', compact('data'));
+        // $data = Gallery::where('type', 1)->get();
+        // return view('frontend.gallery.video', compact('data'));
     }
 
     public function blog()
     {
-        $blogs = Blog::all();
-        $categories = Category::where('type', 1)->get();
-        $latests = Blog::latest('created_at')->limit(3)->get();
+        // $blogs = Blog::all();
+        // $categories = Category::where('type', 1)->get();
+        // $latests = Blog::latest('created_at')->limit(3)->get();
 
-        return view('frontend.blog.index', compact('blogs', 'latests', 'categories'));
+        // return view('frontend.blog.index', compact('blogs', 'latests', 'categories'));
     }
 
-    public function getBlog(Blog $blog)
-    {
-        $categories = Category::where('type', 1)->get();
-        $latests = Blog::latest('created_at')->limit(3)->get();
+    // public function getBlog(Blog $blog)
+    // {
+    //     $categories = Category::where('type', 1)->get();
+    //     $latests = Blog::latest('created_at')->limit(3)->get();
 
-        return view('frontend.blog.details', compact('blog', 'latests', 'categories'));
-    }
+    //     return view('frontend.blog.details', compact('blog', 'latests', 'categories'));
+    // }
 
     public function getCategoryBlogs($id)
     {
-        $blogs = Blog::where('category_id', $id)->get();
-        $categories = Category::where('type', 1)->get();
-        $latests = Blog::latest('created_at')->limit(3)->get();
+        // $blogs = Blog::where('category_id', $id)->get();
+        // $categories = Category::where('type', 1)->get();
+        // $latests = Blog::latest('created_at')->limit(3)->get();
 
-        return view('frontend.blog.index', compact('blogs', 'latests', 'categories'));
+        // return view('frontend.blog.index', compact('blogs', 'latests', 'categories'));
     }
 
     public function about()
     {
-        $services = Service::limit(4)->get();
-        $staffs = Staff::all();
+        // $services = Service::limit(4)->get();
+        // $staffs = Staff::all();
 
-        return view('frontend.about', compact('services', 'staffs'));
+        // return view('frontend.about', compact('services', 'staffs'));
     }
 
-    public function contact()
-    {
-        return view('frontend.contact');
-    }
+//    public function contact()
+//     {
+//         return view('frontend.contact');
+//     }
 
-    public function mail(Request $request)
-    {
-        $general = General::latest('created_at')->first();
-        $data = [
-            'name' => $request->name,
-            'email' => $request->email,
-            'message' => $request->message
-        ];
+    // public function mail(Request $request)
+    // {
+    //     $general = General::latest('created_at')->first();
+    //     $data = [
+    //         'name' => $request->name,
+    //         'email' => $request->email,
+    //         'message' => $request->message
+    //     ];
 
-        Mail::to($general->email)->send(new Contact($data));
+    //     Mail::to($general->email)->send(new Contact($data));
 
-        return back()->with('success', 'Your message has sent!');
-    }
-}
+    //     return back()->with('success', 'Your message has sent!');
+    // }
+ }
