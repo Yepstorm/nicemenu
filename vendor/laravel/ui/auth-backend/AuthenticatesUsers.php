@@ -6,6 +6,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\ValidationException;
 
 trait AuthenticatesUsers
@@ -114,13 +115,17 @@ trait AuthenticatesUsers
         // dd($request);
 
         if ($response = $this->authenticated($request, $this->guard()->user())) {
+            // dd($request);
             if ( $this->guard()->user()->hasRole('admin')) {
                 return $response;
             }
-            else{
-                  return $this->logout($request);
+            elseif($this->guard()->user()->hasRole('user')){
+                $this->guard()->logout();
+                Session::flush();
+                redirect()->route('login');
 
-            }
+          }
+
 
         }
 
@@ -140,6 +145,9 @@ trait AuthenticatesUsers
     {
         if ($user->hasRole('admin')) {
             return redirect(RouteServiceProvider::ADMIN);
+        }
+        elseif($user->hasRole('user')){
+            return redirect(RouteServiceProvider::HOME);
         }
 
     }

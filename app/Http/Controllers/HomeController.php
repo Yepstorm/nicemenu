@@ -48,8 +48,8 @@ class HomeController extends Controller
         // return view('frontend.menu', compact('menus', 'starters'));
     }
 
-    public function reserve(Request $request)
-    {
+    // public function reserve(Request $request)
+    // {
         // Reserve::create([
         //     'date' => $request->date,
         //     'time' => $request->time,
@@ -62,7 +62,7 @@ class HomeController extends Controller
         // ]);
 
         // return back()->with('toast_success', "Your application submitted!");
-    }
+    // }
 
     public function gallery($type)
     {

@@ -40,13 +40,14 @@ Route::post( '/login', action: [AuthController::class, 'loginUser']);
 Route::group(['middleware'=>'auth:sanctum'],function(){
 
     Route::get('/menu', [MenuController::class, 'index']);
+    Route::get('/menu/{id}', [MenuController::class, 'show']);
 
 
-    Route::post('/cart', [CartController::class, 'addCart'])->name('addCart');
+    Route::post('/cart/{menu}/{user_id}', [CartController::class, 'addCart'])->name('addCart');
     Route::get('/cart/{user}', [CartController::class, 'getCart'])->name('getcart');
     Route::post('/cart/update/{user}', [CartController::class, 'updateCart'])->name('cart.update');
     Route::get('/cart/delete/{cart}/{user}', [CartController::class, 'destroy'])->name('cart.delete');
-    
+
 
 
 

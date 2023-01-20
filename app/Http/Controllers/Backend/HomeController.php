@@ -16,7 +16,7 @@ class HomeController extends Controller
         $todayOrder = Order::whereDate('created_at', Carbon::today())->count();
         $pendinnOrder = Order::where('order_status', 0)->count();
         $orders = Order::latest('created_at')->limit(5)->get();
-        $reservations = Reserve::latest('created_at')->limit(5)->get();
-        return view('dashboard', compact('todaySale', 'todayOrder', 'pendinnOrder', 'orders', 'reservations'));
+        // $reservations = Reserve::latest('created_at')->limit(5)->get();
+        return view('dashboard', compact('todaySale', 'todayOrder', 'pendinnOrder', 'orders', ));
     }
 }

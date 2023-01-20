@@ -29,18 +29,7 @@ class MenuController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response 
-     */
-    public function create()
-    {
-        $page_title = "Menu Create";
-        $categories = Category::where('type', 0)->get();
 
-        return view('menu.create', compact('page_title', 'categories'));
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -83,6 +72,11 @@ class MenuController extends Controller
     public function show(Menu $menu)
     {
         //
+        return response()->json([
+            'status' => true,
+            'menu' => $menu
+        ]);
+
     }
 
     /**
