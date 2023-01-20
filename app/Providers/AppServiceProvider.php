@@ -23,11 +23,11 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
-    {
-        View::composer('*', function ($view) {
-            $general = General::latest('created_at')->first();
-            $view->with(['general' => $general]);
-        });
-    }
+    // public function boot()
+    // {
+    //     View::composer('*', function ($view) {
+    //         $general = General::latest('created_at')->first();
+    //         $view->with(['general' => $general]);
+    //     });
+    // }
 }
