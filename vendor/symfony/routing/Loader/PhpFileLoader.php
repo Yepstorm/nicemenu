@@ -11,10 +11,12 @@
 
 namespace Symfony\Component\Routing\Loader;
 
+use Mockery\Matcher\Closure;
+use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Config\Loader\FileLoader;
 use Symfony\Component\Config\Resource\FileResource;
+use Symfony\Component\Translation\Loader\PhpFileLoader;
 use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
-use Symfony\Component\Routing\RouteCollection;
 
 /**
  * PhpFileLoader loads routes from a PHP file.
