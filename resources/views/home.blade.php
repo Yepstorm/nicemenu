@@ -248,7 +248,7 @@
 
                 <!-- Heading -->
                 <h2 class="text-muted m-3">
-                  The Order <span style="color: #D24E00;">Process</span>
+                  Our Order <span style="color: #D24E00;">Process</span>
                 </h2>
 
                 <!-- Text -->
