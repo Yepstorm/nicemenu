@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// Route::get('/menu', [App\Http\Controllers\HomeController::class, 'menu'])->name('menu');
+ Route::get('/menu', [App\Http\Controllers\HomeController::class, 'menu'])->name('menu');
 // Route::post('/mail', [App\Http\Controllers\HomeController::class, 'mail'])->name('mail');
 //cart routes
 // Route::get('/carts/{user}', [App\Http\Controllers\CartController::class, 'getCart'])->name('getcart');

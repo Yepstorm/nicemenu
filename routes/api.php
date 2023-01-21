@@ -1,12 +1,13 @@
 <?php
 
-
 use Spatie\FlareClient\Api;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CartController;
 use App\Http\Controllers\Api\MenuController;
+use App\Http\Controllers\Api\OrderController;
+use App\Http\Controllers\Api\AddressController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,16 @@ Route::group(['middleware'=>'auth:sanctum'],function(){
     Route::get('/cart/{user}', [CartController::class, 'getCart'])->name('getcart');
     Route::post('/cart/update/{user}', [CartController::class, 'updateCart'])->name('cart.update');
     Route::get('/cart/delete/{cart}/{user}', [CartController::class, 'destroy'])->name('cart.delete');
+
+
+
+    Route::post('/address', [AddressController::class, 'index']);
+    Route::post('/address/store',[AddressController::class, 'store']);
+    Route::post('/address/delete', [AddressController::class, 'destroy']);
+
+
+
+    Route::post('/orders', [OrderController::class, 'create']);
 
 
 

@@ -79,7 +79,7 @@
                             <tr>
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->phone }}</td>
-                                <td><span class="badge {{ $item->order_status === 0 ? 'badge-warning':($item->order_status === 1 ? 'badge-success':'badge-danger') }}">{{ $item->order_status === 0 ? 'pending':($item->order_status === 1 ? 'completed':'canceled') }}</span></td>
+                                <td><span class="badge {{ $item->status === 0 ? 'badge-warning':($item->status === 1 ? 'badge-success':'badge-danger') }}">{{ $item->order_status === 0 ? 'pending':($item->order_status === 1 ? 'completed':'canceled') }}</span></td>
                             </tr>
                             @endforeach
                         </table>

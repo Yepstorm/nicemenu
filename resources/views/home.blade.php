@@ -847,7 +847,7 @@ height: 159px;">
 
             <div class="col-md-2 m-3" style="background-color: white; width: 180px;
 height: 159px;">
-              <img src="{{ asset('images/simon.svg') }}" class="position- img-fluid mw-md-100 mw-lg-80 mb-6 mb-md-0" alt="">
+              <img src="{{ asset('images/Simon.svg') }}" class="position- img-fluid mw-md-100 mw-lg-80 mb-6 mb-md-0" alt="">
 
               <!-- Footer -->
               <div class="">
@@ -895,7 +895,7 @@ height: 159px;">
 
             <div class="col-md-2 m-3" style="background-color: white; width: 180px;
 height: 159px;">
-                <img src="{{ asset('images/okonta.svg') }}" class="position- img-fluid mw-md-100 mw-lg-80 mb-6 mb-md-0" alt="">
+                <img src="{{ asset('images/Okonta.svg') }}" class="position- img-fluid mw-md-100 mw-lg-80 mb-6 mb-md-0" alt="">
 
                 <!-- Footer -->
                 <div class="">

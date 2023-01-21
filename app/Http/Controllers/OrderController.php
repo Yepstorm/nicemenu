@@ -55,7 +55,7 @@ class OrderController extends Controller
             'postal_code' => $request->postal_code,
             'payment_method' => $request->payment_method,
             'payment_status' => 0,
-            'order_status' => 0,
+            'status' => 0,
             'total' => $request->total
         ]);
 

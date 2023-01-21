@@ -24,7 +24,7 @@ class CartController extends Controller
         }
 
         $check = $cart->cart_items()->where('menu_id', $request->input('menu_id'))->update([
-            'quantity' => $request->input('qunatity')
+            'quantity' => $request->input('quantity')
         ]);
 
         if(!$check){

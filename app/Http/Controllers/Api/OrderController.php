@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Cart;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -10,15 +11,21 @@ class OrderController extends Controller
 {
     //
 
-    public function checkout($user)
-    {
-        $carts = Cart::where('user_id', $user)->get();
-        $subtotal = 0;
-        foreach ($carts as $cart) {
-            $subtotal += $cart->quantity * $cart->menu->price;
-        }
+    public function create(Request $request)
 
-        // return view('frontend.checkout', compact('carts', 'subtotal'));
+
+    {
+        $order = new Order;
+        $order->cart_id = $request->cart_id;
+        $order->user_id = $request->user_id;
+         $order->status = $request->status;
+        $order->total = $request->total;
+        $order->save();
+
+        return response()->json(['order_id' => $order->id], 201);
     }
 
-}
+
+    }
+
+

@@ -36,7 +36,7 @@
                                     <td>{{ $item->postal_code }}</td>
                                     <td><span class="badge badge-primary">{{ $item->payment_method === 1 ? 'Cash On Delivery':($item->payment_method === 2 ? 'Paypal':'Stripe') }}</span></td>
                                     <td><span class="badge {{ $item->payment_status === 0 ? 'badge-danger':'badge-success' }}">{{ $item->payment_status === 0 ? 'Due':'Paid' }}</span></td>
-                                    <td><span class="badge {{ $item->order_status === 0 ? 'badge-warning':($item->order_status === 1 ? 'badge-success':'badge-danger') }}">{{ $item->order_status === 0 ? 'pending':($item->order_status === 1 ? 'completed':'canceled') }}</span></td>
+                                    <td><span class="badge {{ $item->status === 0 ? 'badge-warning':($item->status === 1 ? 'badge-success':'badge-danger') }}">{{ $item->order_status === 0 ? 'pending':($item->order_status === 1 ? 'completed':'canceled') }}</span></td>
                                     <td style="white-space: nowrap">
                                         <a class="btn btn-primary" href="{{ route('admin.order.confirmation',['accept', $item->id] ) }}">Complete</a>
                                         <a class="btn btn-warning" href="{{ route('admin.order.confirmation',['decline', $item->id] ) }}">Cancel</a>

@@ -25,7 +25,7 @@ class OrderShowController extends Controller
                 'message' => 'Hi, '. $order->name .' Your order has confirmed!'
             ];
 
-            $order->order_status = 1;
+            $order->status = 1;
             $order->update();
 
             Mail::to($order->email)->send(new Reservation($data));
@@ -36,7 +36,7 @@ class OrderShowController extends Controller
             'title' => 'hotfood.com',
             'message' => 'Hi, '. $order->name .' Your order has cancelled!'
         ];
-        $order->order_status = 2;
+        $order->status = 2;
         $order->update();
         Mail::to($order->email)->send(new Reservation($data));
         return back()->with('toast_success', "Yoyr order has cancelled!");
