@@ -40,15 +40,23 @@ Route::post( '/login', action: [AuthController::class, 'loginUser']);
 
 Route::group(['middleware'=>'auth:sanctum'],function(){
 
+
+
+    // MENU
+
     Route::get('/menu', [MenuController::class, 'index']);
     Route::get('/menu/{id}', [MenuController::class, 'show']);
 
 
-    Route::post('/cart/{menu}/{user_id}', [CartController::class, 'addCart'])->name('addCart');
+// CART
+
+    Route::post('/add-to-cart', [CartController::class, 'addCart'])->name('addCart');
     Route::get('/cart/{user}', [CartController::class, 'getCart'])->name('getcart');
     Route::post('/cart/update/{user}', [CartController::class, 'updateCart'])->name('cart.update');
     Route::get('/cart/delete/{cart}/{user}', [CartController::class, 'destroy'])->name('cart.delete');
 
+
+// ADDRESS
 
 
     Route::post('/address', [AddressController::class, 'index']);
@@ -57,10 +65,17 @@ Route::group(['middleware'=>'auth:sanctum'],function(){
 
 
 
-    Route::post('/orders', [OrderController::class, 'create']);
+// ORDERS
+
+
+    Route::post('/orders', [OrderController::class, 'store']);
+    Route::get('/my-orders', [OrderController::class, 'index']);
+    Route::get('/my-orders/{id}', [OrderController::class, 'show']);
 
 
 
+
+// LOGOUT
 
 
     Route::post('/logout', [AuthController::class, 'logout']);

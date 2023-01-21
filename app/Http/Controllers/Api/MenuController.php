@@ -18,14 +18,10 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $page_title = "Menu List";
-        $menues = Menu::all();
-
-        // return view('menu.index', compact('page_title', 'menues'));
-
+        $menus = Menu::all();
         return response()->json([
             'status' => true,
-            'menu' => $menues
+            'menu' => $menus
         ]);
     }
 

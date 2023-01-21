@@ -990,7 +990,7 @@ height: 159px;">
                   <!-- Heading -->
                   <h6 class="mb-0">Kolawole Dollars</h6>
                   <!-- Preheading -->
-                  <h6 class="mb-1 text-muted"><small>(Web Developer)</small></h6>
+                  <h6 class="mb-1 text-muted"><small>(Mobile Developer)</small></h6>
 
                 </div>
 

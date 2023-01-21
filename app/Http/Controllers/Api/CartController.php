@@ -17,10 +17,10 @@ class CartController extends Controller
             'quantity' => ['required', 'numeric']
         ]);
 
-        $user = User::findOrFail(auth()->user()->id);
-        $cart = $user->cart;
+        $user = User::findOrFail($request->input('user_id'));
+        $cart = $user->carts;
         if(!$cart){
-            $cart = $user->cart()->create([]);
+            $cart = $user->carts()->create([]);
         }
 
         $check = $cart->cart_items()->where('menu_id', $request->input('menu_id'))->update([
@@ -30,20 +30,19 @@ class CartController extends Controller
         if(!$check){
             $cart->cart_items()->create([
                 'menu_id' => $request->input('menu_id'),
-                'quantity' => $request->input('quantity')
+                'quantity' => $request->input('quantity'),
+                'user_id' => $user->id,
             ]);
         }
-
-        // return back()->with('success', 'Item added to Cart!');
 
 
         return response()->json([
             'status' => true,
-            'message' =>'Item added to Cart!'
+            'message' =>'Item added to Cart!',
         ]);
     }
 
-    public function getCart($user )
+    public function getCart($user)
     {
         $carts = Cart::where('user_id', $user)->get();
         $subtotal = 0;

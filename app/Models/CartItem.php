@@ -9,14 +9,12 @@ class CartItem extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'menu_id',
-        // 'category_id',
-        // 'title',
-        // 'thumbnail',
-        // 'description',
-        // 'price',
-        // 'status'
+    protected $guarded = [
+        'id'
     ];
+
+    public function menu(){
+        return $this->belongsTo(Menu::class);
+    }
 
 }

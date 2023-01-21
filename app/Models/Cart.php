@@ -9,13 +9,13 @@ class Cart extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'user_id', 'menu_id', 'quantity'
+    protected $guarded = [
+        'id' 
     ];
 
     public function menu()
     {
-        return $this->belongsTo('App\Models\Menu', 'menu_id');
+        return $this->belongsTo(Menu::class);
     }
 
     public function cart_items()

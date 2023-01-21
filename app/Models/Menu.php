@@ -12,18 +12,15 @@ class Menu extends Model
     // protected $guarded = ['id'];
 
     protected $fillable = [
-        
-        'category_id',
-        'title',
-        'thumbnail',
-        'description',
-        'price',
-        'status'
+        'id'
     ];
 
 
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+    public function cart_items(){
+        return $this->hasMany(CartItem::class);
     }
 }

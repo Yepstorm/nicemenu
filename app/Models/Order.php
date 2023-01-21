@@ -9,12 +9,19 @@ class Order extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'cart_id', 'user_id', 'total_amount',
+    protected $guarded = [
+         'id',
     ];
 
     public function details()
     {
         return $this->hasMany('App\Models\OrderMeta');
+    }
+
+    public function user(){
+        return $this->belongsToMany(Order::class);
+    }
+    public function order_items(){
+        return $this->hasMany(OrderItem::class);
     }
 }
