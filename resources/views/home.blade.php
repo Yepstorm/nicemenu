@@ -26,7 +26,7 @@
 
 
               <h1 class="display-3 text-center text-md-start">
-                <span style="color:#D24E00">Farmished ?</span> Place An Order with  <span  style="color:#D24E00">NiceMenu</span>  <br>
+                <span style="color:#D24E00">Farmished?</span> Place An Order with  <span  style="color:#D24E00">NiceMenu</span>  <br>
 
               </h1>
 
@@ -132,7 +132,7 @@
 
               <!-- Text -->
               <p class="fs-lg text-muted mb-6" style="text-align: justify;">
-                It’s our mission to bring to your doorstep whatever meal you desire. Our app is loaded with the best food experiences in Nigeria - within Asaba, Delta State. Our App has also been painstakingly built by a team of experienced developers and designers to ensure a stress-free experience... <a href="./#" style="hover : #db4802" class="">Read More</a>
+                It’s our mission to bring to your doorstep whatever meal you desire. Our app is loaded with the best food experiences in Nigeria - within Asaba, Delta State. Our App has also been painstakingly built by a team of experienced developers and designers to ensure a stress-free experience <a href="./#" style="hover : #db4802" class=""></a>
               </p>
 
               <!-- List -->
@@ -1068,7 +1068,7 @@ height: 159px;">
 
             <div class="col-md-2 m-3" style="background-color: white; width: 180px;
 height: 159px;">
-                <img src="{{ asset('images/Peremobowei.svg') }}" class="position- img-fluid mw-md-100 mw-lg-80 mb-6 mb-md-0" alt="">
+                <img src="{{ asset('images/Charles.svg') }}" class="position- img-fluid mw-md-100 mw-lg-80 mb-6 mb-md-0" alt="">
 
                 <!-- Footer -->
                 <div class="">
@@ -1106,7 +1106,7 @@ height: 159px;">
 
           <div class="col-md-2 m-3" style="background-color: white; width: 180px;
 height: 159px;">
-              <img src="{{ asset('images/Peremobowei.svg') }}" class="position- img-fluid mw-md-100 mw-lg-80 mb-6 mb-md-0" alt="">
+              <img src="{{ asset('images/Daro.svg') }}" class="position- img-fluid mw-md-100 mw-lg-80 mb-6 mb-md-0" alt="">
 
               <!-- Footer -->
               <div class="">
@@ -1122,7 +1122,7 @@ height: 159px;">
 
           <div class="col-md-2 m-3" style="background-color: white; width: 180px;
 height: 159px;">
-              <img src="{{ asset('images/Peremobowei.svg') }}" class="position- img-fluid mw-md-100 mw-lg-80 mb-6 mb-md-0" alt="">
+              <img src="{{ asset('images/Ken.svg') }}" class="position- img-fluid mw-md-100 mw-lg-80 mb-6 mb-md-0" alt="">
 
               <!-- Footer -->
               <div class="">

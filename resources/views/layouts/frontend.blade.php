@@ -159,7 +159,7 @@
             <div class="col-6 col-md-4 col-lg-2">
 
               <!-- Heading -->
-              <h6 class="fw-bold text-uppercase text-gray-700">
+              <h6 class="fw-bold text-uppercase text-gray-700 ms-2">
                 Legal
               </h6>
 

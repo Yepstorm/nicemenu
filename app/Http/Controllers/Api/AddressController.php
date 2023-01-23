@@ -28,7 +28,7 @@ class AddressController extends Controller
     public function store(Request $request)
      {
            $valid =  $request->validate([
-                'type' => 'required',
+                // 'type' => 'required',
                 'address' => 'required',
             ]);
 
@@ -52,17 +52,17 @@ class AddressController extends Controller
 
 
         public function destroy(Address $address, $user)
-        {
+         {
 
             $user = user::find($address);
-            if($address==null){
-                return response()->json([
-                    'status' => true,
-                    'message' => 'Address Not Found',
-                ], 200);
+           if($address==null){
+                 return response()->json([
+                      'status' => true,
+                     'message' => 'Address Not Found',
+                 ], 200);
 
 
-            }
+             }
                 $address->delete();
                 return response()->json([
                     'status' => true,
